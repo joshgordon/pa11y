@@ -242,7 +242,9 @@ describe('lib/action', () => {
 
 			it('clicks the specified element on the page', () => {
 				expect(puppeteer.mockPage.click).toHaveBeenCalledTimes(1);
-				expect(puppeteer.mockPage.click).toHaveBeenCalledWith(clickElementMatches[3], {});
+				expect(puppeteer.mockPage.click).toHaveBeenCalledWith(clickElementMatches[3], {
+					clickCount: 1
+				});
 			});
 
 			it('resolves with `undefined`', () => {
@@ -285,7 +287,9 @@ describe('lib/action', () => {
 
 			it('clicks the specified element on the page', () => {
 				expect(puppeteer.mockPage.click).toHaveBeenCalledTimes(1);
-				expect(puppeteer.mockPage.click).toHaveBeenCalledWith(clickElementMatches[3], {'clickCount': 2});
+				expect(puppeteer.mockPage.click).toHaveBeenCalledWith(clickElementMatches[3], {
+					clickCount: 2
+				});
 			});
 
 			it('resolves with `undefined`', () => {
